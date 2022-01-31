@@ -20,5 +20,10 @@ export function Chapters({onSelectChapter, chapters = []}) {
 
     const chaptersRender = chapters.map(chapterRender);
 
-    return <div>{chaptersRender}</div>
+    return (
+        <aside>
+            <h2>Chapitres</h2>
+            {chaptersRender}
+        </aside>
+    )
 }

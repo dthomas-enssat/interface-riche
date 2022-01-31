@@ -1,4 +1,35 @@
+.title {
+    grid-area: title;
+    display: flex;
+    align-self: center;
+    align-content: center;
+}
+
 .video {
-    height: 10vh;
-    width: auto;
+    grid-area: video;
+}
+
+.chapters {
+    grid-area: chapters;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 1vh;
+}
+
+.map {
+    grid-area: map;
+    padding: 1vh;
+}
+
+.container {
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "title title title title title"
+        "chapters video video video ."
+        "map video video video ."
+        "map video video video .";
 }
