@@ -19,7 +19,6 @@ export function VideoPlayer({
             }
 
             if(startTime) {
-                console.log("starting video at " + startTime)
                 videoRef.current.currentTime = startTime
             }
         }

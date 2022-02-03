@@ -2,17 +2,16 @@
     grid-area: title;
     display: flex;
     align-self: center;
-    align-content: center;
+    padding: 1vh;
 }
 
 .video {
     grid-area: video;
+    padding: 1vh;
 }
 
 .chapters {
     grid-area: chapters;
-    display: flex;
-    flex-direction: column;
     height: 100%;
     padding: 1vh;
 }
@@ -22,14 +21,27 @@
     padding: 1vh;
 }
 
+.keywords {
+    grid-area: keywords;
+    display: flex;
+    align-self: center;
+    justify-content: space-around;
+    padding: 1vh;
+}
+
+.chatroom {
+    grid-area: chatroom;
+    padding: 1vh;
+}
+
 .container {
     height: 100%;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: auto;
     grid-template-areas: 
-        "title title title title title"
-        "chapters video video video ."
-        "map video video video ."
-        "map video video video .";
+        "chapters video video video chatroom"
+        "map video video video chatroom"
+        "map title title title chatroom"
+        "map keywords keywords keywords chatroom";
 }

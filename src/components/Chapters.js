@@ -1,5 +1,6 @@
-export function Chapter({chapter, onClickChapter}) {
+import styles from "./Chapters.module.css"
 
+function Chapter({chapter, onClickChapter}) {
     return (
         <button onClick={onClickChapter}>
             {chapter.title}
@@ -7,7 +8,7 @@ export function Chapter({chapter, onClickChapter}) {
     )
 }
 
-export function Chapters({onSelectChapter, chapters = []}) {
+export function Chapters({onSelectChapter, chapters = [], className}) {
     const onClickChapter = (chapter) => {
         onSelectChapter && onSelectChapter(chapter)
     }
@@ -21,9 +22,11 @@ export function Chapters({onSelectChapter, chapters = []}) {
     const chaptersRender = chapters.map(chapterRender);
 
     return (
-        <aside>
+        <aside className={className}>
             <h2>Chapitres</h2>
-            {chaptersRender}
+            <div className={styles.chapters}>
+                {chaptersRender}
+            </div>
         </aside>
     )
 }

@@ -1,9 +1,29 @@
 body {
   height: 100vh;
   margin: 0;
+  font: 1.2em "Helvetica Neue", Helvetica, Arial, sans-serif, sans-serif;
 }
 
 #root {
   height: 100%;
-  font: 1.2em "Helvetica Neue", Helvetica, Arial, sans-serif, sans-serif;
+}
+
+a:link {
+  text-decoration: none;
+  color: black;
+}
+
+a:visited {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+a:active {
+  text-decoration: none;
+  color: blacks;
 }
