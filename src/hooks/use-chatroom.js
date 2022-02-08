@@ -9,8 +9,8 @@ export function useChatroom(name) {
             const webSocket = new WebSocket("wss://imr3-react.herokuapp.com");
             setWebSocket(webSocket);
         } else {
-            webSocket.onmessage = (evt) => {
-                const newMessage = JSON.parse(evt.data);
+            webSocket.onmessage = (body) => {
+                const newMessage = JSON.parse(body.data);
                 setMessage([...message, ...newMessage]);
             };
         }

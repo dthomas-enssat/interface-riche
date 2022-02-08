@@ -5,6 +5,12 @@ import { Chapters } from "./components/Chapters";
 import { Map } from "./components/Map";
 import { Keywords } from "./components/Keywords";
 import { Chatroom } from "./components/Chatroom";
+import "./styles/antd.css";
+
+import {
+  Typography
+} from 'antd';
+const { Title } = Typography;
 
 function App() {
   const [movie, setMovie] = useState();
@@ -59,11 +65,6 @@ function App() {
 
   return (
     <section className={styles.container}>
-      <div className={styles.title}>
-        <h1>{ movie && 
-          <a href={movie.synopsis_url} target="_blank" rel="noreferrer">{movie.title}</a> }
-        </h1>
-      </div>
       <Map
         className={styles.map}
         waypoint={currentWaypoint}
@@ -79,10 +80,15 @@ function App() {
         chapters={chapters} 
         onSelectChapter={onSelectChapter}
       />
-      <Keywords
-        className={styles.keywords}
-        keywords={currentKeyword}
-      />
+      <div className={styles.metadata}>
+        <Title className={styles.title}>{ movie && 
+          <a href={movie.synopsis_url} target="_blank" rel="noreferrer">{movie.title}</a> }
+        </Title>
+        <Keywords
+          className={styles.keywords}
+          keywords={currentKeyword}
+        />
+      </div>
       <Chatroom 
         className={styles.chatroom}
         moment={time}

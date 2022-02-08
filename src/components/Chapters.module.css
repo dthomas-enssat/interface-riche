@@ -1,5 +1,28 @@
 .chapters {
     display: flex;
+    height: 100%;
     flex-direction: column;
     overflow-y: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.chapters::-webkit-scrollbar {
+    display: none;
+}
+
+.button {
+    margin: 0.2vh 0;
+}
+
+@media only screen and (max-width: 900px) {
+    .chapters {
+        flex-direction: row;
+        overflow-y: hidden;
+        overflow-x: scroll;
+    }
+
+    .chapters > * {
+        margin: 0 1vw
+    }
 }

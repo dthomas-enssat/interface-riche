@@ -8,6 +8,7 @@ export function Map({waypoint, className}) {
                 className={styles.map}
                 center={[32.42, -90.13]}
                 zoom={2}
+                zoomControl={false}
                 scrollWheelZoom={false}
             >
                 <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>

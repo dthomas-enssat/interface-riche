@@ -1,37 +1,41 @@
-.title {
-    grid-area: title;
+.chapters {
+    grid-area: chapters;
     display: flex;
-    align-self: center;
+    flex-direction: column;
+    height: 50vh;
+    padding: 0 1vh;
+}
+
+.map {
+    grid-area: map;
+    height: 50vh;
     padding: 1vh;
 }
 
 .video {
     grid-area: video;
-    padding: 1vh;
-}
-
-.chapters {
-    grid-area: chapters;
     height: 100%;
-    padding: 1vh;
+    padding: 0 1vh;
 }
 
-.map {
-    grid-area: map;
+.metadata {
+    grid-area: metadata;
+    display: flex;
+    flex-direction: column;
     padding: 1vh;
 }
 
 .keywords {
-    grid-area: keywords;
     display: flex;
-    align-self: center;
-    justify-content: space-around;
-    padding: 1vh;
+    padding: 0 1vh;
 }
 
 .chatroom {
     grid-area: chatroom;
-    padding: 1vh;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 0 1vh;
 }
 
 .container {
@@ -42,6 +46,40 @@
     grid-template-areas: 
         "chapters video video video chatroom"
         "map video video video chatroom"
-        "map title title title chatroom"
-        "map keywords keywords keywords chatroom";
+        "map metadata metadata metadata chatroom";
+}
+
+@media only screen and (max-width: 900px) {
+    * {
+    padding: 0;
+    }
+
+    .container {
+        grid-template-rows: auto;
+        grid-template-areas:
+            "video video video video video"
+            "metadata metadata metadata metadata metadata"
+            "chapters chapters chapters chapters chapters"
+            "chatroom chatroom chatroom chatroom chatroom";
+      }
+
+      .video:hover ~ .metadata {
+          display: block;
+      }
+
+      .metadata {
+          display: none;
+      }
+
+      .chapters {
+          height: auto;
+      }
+
+      .map {
+        display: none;
+      }
+
+      .chatroom {
+          height: 60vh;
+      }
 }

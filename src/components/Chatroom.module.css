@@ -1,0 +1,22 @@
+.chat {
+    display: flex;
+    flex-direction: column-reverse !important;
+    overflow-y: scroll;
+}
+
+.message {
+    padding: 3vh 0;
+    width: 100%;
+}
+
+.content {
+    word-break: break-all;
+
+    background-color: #18191c !important;
+    border-radius: 20px;
+    padding: 0 1vh;
+}
+
+.content:hover {
+    background-color: #2f3136 !important;
+}

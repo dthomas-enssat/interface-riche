@@ -1,10 +1,16 @@
 import styles from "./Chapters.module.css"
 
+import {
+    Button,
+    Typography
+} from 'antd';
+const { Title } = Typography;
+
 function Chapter({chapter, onClickChapter}) {
     return (
-        <button onClick={onClickChapter}>
+        <Button size="small" onClick={onClickChapter} className={styles.button} block>
             {chapter.title}
-        </button>
+        </Button>
     )
 }
 
@@ -23,7 +29,7 @@ export function Chapters({onSelectChapter, chapters = [], className}) {
 
     return (
         <aside className={className}>
-            <h2>Chapitres</h2>
+            <Title level={2}>Chapitres</Title>
             <div className={styles.chapters}>
                 {chaptersRender}
             </div>
